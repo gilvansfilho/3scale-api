@@ -56,6 +56,16 @@ spec:
       unit: hit
   policies:
   - configuration:
+      key:
+        name: "{{ jwt.sub }}"
+        name_type: liquid
+        scope: service
+      count: 10
+      window: 60
+    enabled: true
+    name: edge
+    version: builtin
+  - configuration:
       request:
       - header: x-integrador-servico
         op: set
