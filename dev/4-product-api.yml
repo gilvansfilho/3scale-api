@@ -8,7 +8,7 @@ metadata:
     insecure_skip_verify: "true"
 spec:
   applicationPlans:
-    default:
+    api-teste-default:
       name: api-teste-default
   backendUsages:
     api-teste-echo-api:
