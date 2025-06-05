@@ -13,6 +13,21 @@ spec:
   backendUsages:
     api-teste-echo-api:
       path: /api
+  deployment:
+    apicastHosted:
+      authentication:
+        oidc:
+          authenticationFlow:
+            directAccessGrantsEnabled: true
+            implicitFlowEnabled: false
+            serviceAccountsEnabled: true
+            standardFlowEnabled: true
+          credentials: headers
+          issuerEndpointRef:
+            name: api-teste-keycloak
+          issuerType: keycloak
+          jwtClaimWithClientID: azp
+          jwtClaimWithClientIDType: plain
   mappingRules:
   - httpMethod: GET
     increment: 1
