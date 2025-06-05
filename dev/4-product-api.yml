@@ -94,6 +94,9 @@ spec:
             name_type: plain
       - resource: '/api/user'
         resource_type: plain
+        methods:
+          - GET
+          - POST
         realm_roles:
           - name: user
             name_type: plain
