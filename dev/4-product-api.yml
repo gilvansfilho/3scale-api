@@ -84,19 +84,30 @@ spec:
     enabled: true
     name: cors
     version: builtin
+  # RHSSO/Keycloak Role Check - https://github.com/3scale/APIcast/tree/master/gateway/src/apicast/policy/keycloak_role_check
   - configuration: {}
     enabled: false
     name: keycloak_role_check
     version: builtin
+  # APICast - default
   - configuration: {}
     enabled: true
     name: apicast
     version: builtin
+  # Headers - https://github.com/3scale/APIcast/tree/master/gateway/src/apicast/policy/headers
   - configuration:
       request:
-      - header: x-integrador-servico
+      - header: x-crls-user
         op: set
-        value: '{{ original_request.path | remove_first: ''\/'' | split: ''\/'' | first }}'
+        value: '{{ jwt.preferred_username }}'
+        value_type: liquid
+      - header: x-crls-user-name
+        op: set
+        value: '{{ jwt.name }}'
+        value_type: liquid
+      - header: x-crls-user-email
+        op: set
+        value: '{{ jwt.email }}'
         value_type: liquid
     enabled: true
     name: headers
