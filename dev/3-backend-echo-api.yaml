@@ -14,5 +14,5 @@ spec:
       friendlyName: Hits
       unit: hit
   name: api-echo-api
-  privateBaseURL: https://echo-api.3scale.net/
+  privateBaseURL: https://echo-api.3scale.net/backend/
   systemName: api-echo-api
