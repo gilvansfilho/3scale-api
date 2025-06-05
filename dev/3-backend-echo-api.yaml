@@ -1,0 +1,18 @@
+# exemplo de backend
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Backend
+metadata:
+  name: api-echo-api
+  namespace: 3scale
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    insecure_skip_verify: "true"
+spec:
+  metrics:
+    hits:
+      description: Number of API hits
+      friendlyName: Hits
+      unit: hit
+  name: api-echo-api
+  privateBaseURL: https://echo-api.3scale.net/
+  systemName: api-echo-api

@@ -1,0 +1,16 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Application
+metadata:
+  name: api-default
+  namespace: 3scale
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+    insecure_skip_verify: "true"
+spec:
+  accountCR:
+    name: api-default
+  applicationPlanName: api-default
+  description: Default application for api
+  name: api-default
+  productCR:
+    name: api
