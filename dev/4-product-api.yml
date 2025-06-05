@@ -7,12 +7,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
     insecure_skip_verify: "true"
 spec:
+  name: api-teste
+  systemName: api-teste
+  providerAccountRef: 
+    name: tenant-apidev
   applicationPlans:
     api-teste-default:
       name: api-teste-default
-  backendUsages:
-    api-teste-echo-api:
-      path: /api
   deployment:
     apicastHosted:
       authentication:
@@ -28,6 +29,9 @@ spec:
           issuerType: keycloak
           jwtClaimWithClientID: azp
           jwtClaimWithClientIDType: plain
+  backendUsages:
+    api-teste-echo-api:
+      path: /api
   mappingRules:
   - httpMethod: GET
     increment: 1
@@ -50,7 +54,24 @@ spec:
       description: Number of API hits
       friendlyName: Hits
       unit: hit
-  name: api-teste
-  systemName: api-teste
-  providerAccountRef: 
-    name: tenant-apidev
+  policies:
+  - configuration:
+      request:
+      - header: x-integrador-servico
+        op: set
+        value: '{{ original_request.path | remove_first: ''\/'' | split: ''\/'' | first }}'
+        value_type: liquid
+    enabled: true
+    name: headers
+    version: builtin
+  - configuration: {}
+    enabled: true
+    name: apicast
+    version: builtin
+  - configuration:
+      all_proxy: http://integrador-conecta-policy.3scale.svc.cluster.local:8081
+      http_proxy: http://integrador-conecta-policy.3scale.svc.cluster.local:8081
+      https_proxy: http://integrador-conecta-policy.3scale.svc.cluster.local:8081
+    enabled: true
+    name: camel
+    version: builtin
