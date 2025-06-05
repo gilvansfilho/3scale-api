@@ -63,7 +63,7 @@ spec:
       count: 10
       window: 60
     enabled: true
-    name: edge
+    name: rate_limit
     version: builtin
   - configuration:
       request:
