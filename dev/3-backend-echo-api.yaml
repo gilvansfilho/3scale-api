@@ -16,3 +16,5 @@ spec:
   name: api-teste-echo-api
   privateBaseURL: https://echo-api.3scale.net/backend123/
   systemName: api-teste-echo-api
+  providerAccountRef: 
+    name: tenant-apidev
