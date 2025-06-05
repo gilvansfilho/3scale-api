@@ -8,3 +8,5 @@ metadata:
     insecure_skip_verify: "true"
 spec:
   orgName: api-teste-default-org
+  providerAccountRef: 
+    name: tenant-apidev

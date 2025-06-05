@@ -14,3 +14,5 @@ spec:
   email: api-teste-default@api.com.br
   role: admin
   username: api-teste-default
+  providerAccountRef: 
+    name: tenant-apidev
