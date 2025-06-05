@@ -9,5 +9,6 @@ metadata:
 spec:
   productCRName: api-teste
   production: true
+  deleteCR: true
   providerAccountRef: 
     name: tenant-apidev
