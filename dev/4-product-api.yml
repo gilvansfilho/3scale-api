@@ -1,7 +1,7 @@
 apiVersion: capabilities.3scale.net/v1beta1
 kind: Product
 metadata:
-  name: teste-api
+  name: api-teste
   namespace: 3scale
   annotations:
     argocd.argoproj.io/sync-wave: "4"
@@ -9,7 +9,7 @@ metadata:
 spec:
   applicationPlans:
     default:
-      name: teste-api-default
+      name: api-teste-default
   backendUsages:
     api-teste-echo-api:
       path: /api
@@ -31,5 +31,5 @@ spec:
       description: Number of API hits
       friendlyName: Hits
       unit: hit
-  name: teste-api
-  systemName: teste-api
+  name: api-teste
+  systemName: api-teste
