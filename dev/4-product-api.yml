@@ -62,15 +62,15 @@ spec:
             name: "{{ jwt.sub }}"
             name_type: liquid
             scope: service
-          count: 10 
+          count: 100 
           window: 60
-    enabled: false
+    enabled: true
     name: rate_limit
     version: builtin
   # CORS - https://github.com/3scale/APIcast/tree/master/gateway/src/apicast/policy/cors
   - configuration:
       allow_origin: '*'
-      max_age: 600
+      max_age: 300
       allow_methods:
         - GET
         - HEAD
@@ -81,7 +81,7 @@ spec:
         - OPTIONS
         - TRACE
         - CONNECT
-    enabled: false
+    enabled: true
     name: cors
     version: builtin
   - configuration: {}
