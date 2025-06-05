@@ -17,15 +17,19 @@ spec:
   - httpMethod: GET
     increment: 1
     metricMethodRef: hits
-    pattern: /
+    pattern: /api
   - httpMethod: POST
     increment: 1
     metricMethodRef: hits
-    pattern: /
+    pattern: /api
   - httpMethod: PUT
     increment: 1
     metricMethodRef: hits
-    pattern: /
+    pattern: /api
+  - httpMethod: DELETE
+    increment: 1
+    metricMethodRef: hits
+    pattern: /api
   metrics:
     hits:
       description: Number of API hits
