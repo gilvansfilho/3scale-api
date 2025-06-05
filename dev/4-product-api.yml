@@ -11,7 +11,7 @@ spec:
     default:
       name: teste-api-default
   backendUsages:
-    api-echo-api:
+    api-teste-echo-api:
       path: /api
   mappingRules:
   - httpMethod: GET
