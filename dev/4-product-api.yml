@@ -55,16 +55,30 @@ spec:
       friendlyName: Hits
       unit: hit
   policies:
+  # Edge limiting - https://github.com/3scale/APIcast/blob/master/gateway/src/apicast/policy/rate_limit/
   - configuration:
       fixed_window_limiters:
         - key:
             name: "{{ jwt.sub }}"
             name_type: liquid
             scope: service
-          count: 10
+          count: 10 
           window: 60
-    enabled: true
+    enabled: false
     name: rate_limit
+    version: builtin
+  # CORS - https://github.com/3scale/APIcast/tree/master/gateway/src/apicast/policy/cors
+  - configuration: {}
+    enabled: false
+    name: cors
+    version: builtin
+  - configuration: {}
+    enabled: false
+    name: keycloak_role_check
+    version: builtin
+  - configuration: {}
+    enabled: true
+    name: apicast
     version: builtin
   - configuration:
       request:
@@ -74,15 +88,4 @@ spec:
         value_type: liquid
     enabled: true
     name: headers
-    version: builtin
-  - configuration: {}
-    enabled: true
-    name: apicast
-    version: builtin
-  - configuration:
-      all_proxy: http://integrador-conecta-policy.3scale.svc.cluster.local:8081
-      http_proxy: http://integrador-conecta-policy.3scale.svc.cluster.local:8081
-      https_proxy: http://integrador-conecta-policy.3scale.svc.cluster.local:8081
-    enabled: true
-    name: camel
     version: builtin
