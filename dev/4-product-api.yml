@@ -88,11 +88,15 @@ spec:
   - configuration:
       scopes:
       - resource: '/api/admin'
+        resource_type: text
         realm_roles:
           - name: admin
+            name_type: text
       - resource: '/api/user'
+        resource_type: text
         realm_roles:
           - name: user
+            name_type: text
     enabled: true
     name: keycloak_role_check
     version: builtin
