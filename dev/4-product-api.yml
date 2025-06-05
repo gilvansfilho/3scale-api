@@ -85,7 +85,14 @@ spec:
     name: cors
     version: builtin
   # RHSSO/Keycloak Role Check - https://github.com/3scale/APIcast/tree/master/gateway/src/apicast/policy/keycloak_role_check
-  - configuration: {}
+  - configuration:
+      scopes:
+      - resource: '/api/admin'
+        realm_roles:
+          - name: admin
+      - resource: '/api/user'
+        realm_roles:
+          - name: user
     enabled: false
     name: keycloak_role_check
     version: builtin
