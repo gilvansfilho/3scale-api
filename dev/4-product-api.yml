@@ -93,7 +93,7 @@ spec:
       - resource: '/api/user'
         realm_roles:
           - name: user
-    enabled: false
+    enabled: true
     name: keycloak_role_check
     version: builtin
   # APICast - default
