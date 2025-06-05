@@ -1,16 +1,16 @@
 apiVersion: capabilities.3scale.net/v1beta1
 kind: DeveloperUser
 metadata:
-  name: api-teste-default
+  name: api-teste-default-user
   namespace: 3scale
   annotations:
     argocd.argoproj.io/sync-wave: "1"
     insecure_skip_verify: "true"
 spec:
   passwordCredentialsRef:
-    name: api-teste-default
+    name: api-teste-default-secret
   developerAccountRef:
-    name: api-teste-default
+    name: api-teste-default-account
   email: api-teste-default@api.com.br
   role: admin
   username: api-teste-default

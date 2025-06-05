@@ -1,7 +1,7 @@
 apiVersion: capabilities.3scale.net/v1beta1
 kind: DeveloperAccount
 metadata:
-  name: api-teste-default
+  name: api-teste-default-account
   namespace: 3scale
   annotations:
     argocd.argoproj.io/sync-wave: "2"

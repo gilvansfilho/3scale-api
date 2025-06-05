@@ -1,14 +1,14 @@
 apiVersion: capabilities.3scale.net/v1beta1
 kind: Application
 metadata:
-  name: api-teste-default
+  name: api-teste-default-application
   namespace: 3scale
   annotations:
     argocd.argoproj.io/sync-wave: "5"
     insecure_skip_verify: "true"
 spec:
   accountCR:
-    name: api-teste-default
+    name: api-teste-default-user
   applicationPlanName: api-teste-default
   description: Default application for api
   name: api-teste-default
