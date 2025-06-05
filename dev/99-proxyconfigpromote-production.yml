@@ -1,0 +1,13 @@
+kind: ProxyConfigPromote
+apiVersion: capabilities.3scale.net/v1beta1
+metadata:
+  name: proxyconfigpromote-production
+  namespace: 3scale
+  annotations:
+    argocd.argoproj.io/sync-wave: "99"
+    argocd.argoproj.io/sync-options: Force=true,Replace=true
+spec:
+  productCRName: api-teste
+  production: true
+  providerAccountRef: 
+    name: tenant-apidev
