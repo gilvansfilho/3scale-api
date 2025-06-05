@@ -51,7 +51,7 @@ spec:
     pattern: /api
   metrics:
     hits:
-      description: Number of API hits
+      description: Number of API hitss
       friendlyName: Hits
       unit: hit
   policies:
