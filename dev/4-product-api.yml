@@ -37,6 +37,10 @@ spec:
     increment: 1
     metricMethodRef: hits
     pattern: /api
+  - httpMethod: GET
+    increment: 1
+    metricMethodRef: hits
+    pattern: /api/admin
   - httpMethod: POST
     increment: 1
     metricMethodRef: hits
