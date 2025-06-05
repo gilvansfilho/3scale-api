@@ -14,7 +14,7 @@ spec:
       friendlyName: Hits
       unit: hit
   name: api-teste-echo-api
-  privateBaseURL: https://echo-api.3scale.net/backend123/
+  privateBaseURL: https://echo-api.3scale.net/backend/
   systemName: api-teste-echo-api
   providerAccountRef: 
     name: tenant-apidev

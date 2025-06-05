@@ -31,7 +31,7 @@ spec:
           jwtClaimWithClientIDType: plain
   backendUsages:
     api-teste-echo-api:
-      path: /api1
+      path: /api
   mappingRules:
   - httpMethod: GET
     increment: 1
