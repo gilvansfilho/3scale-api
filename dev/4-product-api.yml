@@ -68,7 +68,19 @@ spec:
     name: rate_limit
     version: builtin
   # CORS - https://github.com/3scale/APIcast/tree/master/gateway/src/apicast/policy/cors
-  - configuration: {}
+  - configuration:
+      allow_origin: '*'
+      max_age: 600
+      allow_methods:
+        - GET
+        - HEAD
+        - POST
+        - PUT
+        - DELETE
+        - PATCH
+        - OPTIONS
+        - TRACE
+        - CONNECT
     enabled: false
     name: cors
     version: builtin
