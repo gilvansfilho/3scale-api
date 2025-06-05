@@ -56,13 +56,13 @@ spec:
       unit: hit
   policies:
   - configuration:
-      fixed_window_limiters:
-        key:
-          name: "{{ jwt.sub }}"
-          name_type: liquid
-          scope: service
-        count: 10
-        window: 60
+    fixed_window_limiters:
+      key:
+        name: "{{ jwt.sub }}"
+        name_type: liquid
+        scope: service
+      count: 10
+      window: 60
     enabled: true
     name: rate_limit
     version: builtin
