@@ -25,7 +25,7 @@ spec:
             standardFlowEnabled: true
           credentials: headers
           issuerEndpointRef:
-            name: api-teste-keycloak
+            name: api-teste-keycloak-secret
           issuerType: keycloak
           jwtClaimWithClientID: azp
           jwtClaimWithClientIDType: plain
