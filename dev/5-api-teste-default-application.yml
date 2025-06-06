@@ -8,9 +8,9 @@ metadata:
     insecure_skip_verify: "true"
 spec:
   accountCR:
-    name: api-teste-default-user
+    name: api-teste-default-account
   applicationPlanName: api-teste-default
   description: Default application for api
-  name: api-teste-default
+  name: api-teste-default-application
   productCR:
     name: api-teste
